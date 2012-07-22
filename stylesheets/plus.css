@@ -1,0 +1,67 @@
+﻿body
+{
+    background-color:#e0e0e0;
+}
+
+.container
+{
+    background-color:#fff;
+    padding:20px;
+    margin-top:20px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    color:#835504;
+}
+
+.headcover
+{
+    max-height:50px;
+}
+
+.guiacover
+{
+    width:150px;
+    height:150px;
+    position:relative;
+    z-index:999;
+}
+
+.index
+{
+    margin-top:50px;
+}
+
+.index ul
+{
+    list-style-type: none;
+}
+
+.newlink
+{
+    text-decoration:none;
+    color:#835504;
+}
+
+.newlink:hover
+{
+    color:#c17e08;
+    text-decoration:none;
+}
+
+.conteudo
+{
+    border-left:1px solid #e0e0e0;
+    padding-left:25px;
+}
+
+.hrbold
+{
+    height:10px;
+}
+
+.hrthin
+{
+    margin:5px;
+}
