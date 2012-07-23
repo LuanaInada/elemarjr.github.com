@@ -49,11 +49,18 @@
             this.blog = blog;
         };
 
+        var XnaPost = function (id, title, blog, image) {
+            this.id = id;
+            this.title = title;
+            this.blog = blog;
+            this.image = image;
+        };
+
         $(function () {
             var posts = [
                 new JavascriptPost("starfield", "Starfield", "http://elemarjr.net/2011/10/21/jornada-nas-estrelas-starfield-em-html5/"),
                 new JavascriptPost("spheres", "Spheres", "http://elemarjr.net/2011/10/15/criando-animaes-bacanas-com-o-canvas-do-html5/"),
-                new JavascriptPost("lagrange", "Lagrange Interpolation", "http://elemarjr.net/2011/12/20/drawing-curves-with-lagrange-interpolation-javascript-html5/"),
+                new JavascriptPost("lagrange", "Lagrange", "http://elemarjr.net/2011/12/20/drawing-curves-with-lagrange-interpolation-javascript-html5/"),
                 new JavascriptPost("amazingtrees", "Amazing trees", "http://elemarjr.net/2011/10/28/amazing-trees-html5-canvas/"),
                 new JavascriptPost("mandelbrot", "Mandelbrot set", "http://elemarjr.net/2011/10/25/fractals-and-tiles-com-html5-parte-7-mandelbrot-set/"),
                 new JavascriptPost("barnsley", "Barnsley's fern", "http://elemarjr.net/2011/10/24/fractals-and-tiles-com-html5-parte-6-barnsleys-fern/"),
@@ -87,7 +94,7 @@
 
                 aImage.appendTo(divImage);
 
-                $('<h2><a href="demos/' + posts[i].id + '.html">' + posts[i].title + '</a></h2>')
+                $('<h2><a href="demos/' + posts[i].id + '.html">' + posts[i].title + ' (js)</a></h2>')
                     .appendTo(div);
 
                 $('<a class="btn btn-primary" href="demos/' + posts[i].id + '.html">demo</a>')
@@ -101,215 +108,120 @@
 
                 div.appendTo(target);
             }
+
+            
+            xnaposts = [
+                new XnaPost("Parte%2002",
+                    "Animated Sprites",
+                    "http://elemarjr.net/2011/03/02/vamos-aprender-xna-parte-2-animated-sprites",
+                    "http://elemarjr.files.wordpress.com/2011/03/image8.png"),
+                new XnaPost("Parte%2003",
+                    "User input",
+                    "http://elemarjr.net/2011/03/11/vamos-aprender-xna-parte-3-design-e-user-input",
+                    "http://elemarjr.files.wordpress.com/2011/03/image16.png"),
+                new XnaPost("Parte%2004",
+                    "3D madness",
+                    "http://elemarjr.net/2011/03/19/vamos-aprender-xna-parte-4-xna-3d-madness/",
+                    "http://elemarjr.files.wordpress.com/2011/03/image31.png"),
+                new XnaPost("Parte%2005",
+                    "Rotating cube",
+                    "http://elemarjr.net/2011/04/10/vamos-aprender-xna-parte-5-rotating-cube-3d/",
+                    "http://elemarjr.files.wordpress.com/2011/04/image4.png"),
+                new XnaPost("Parte%2006",
+                    "Loading models",
+                    "http://elemarjr.net/2011/04/29/vamos-aprender-xna-parte-6-loading-3d-models/",
+                    "http://elemarjr.files.wordpress.com/2011/04/image15.png"),
+                new XnaPost("Parte%2007",
+                    "Space simulator!",
+                    "http://elemarjr.net/2011/06/20/vamos-aprender-xna-parte-7-space-simulator/",
+                    "http://elemarjr.files.wordpress.com/2011/06/image1.png"),
+                new XnaPost("Parte%2008",
+                    "Entendendo HLSL!",
+                    "http://elemarjr.net/2011/07/23/vamos-aprender-xna-parte-8-entendendo-hlsl/",
+                    "http://elemarjr.files.wordpress.com/2011/07/image10.png"),
+                new XnaPost("Parte%2009",
+                    "Mapeando texturas",
+                    "http://elemarjr.net/2011/07/23/vamos-aprender-xna-parte-9-hlsl-e-mapeamento-de-texturas/",
+                    "http://elemarjr.files.wordpress.com/2011/07/image14.png"),
+                new XnaPost("Parte%2010",
+                    "Iluminação básica",
+                    "http://elemarjr.net/2011/07/24/vamos-aprender-xna-parte-10-hlsl-e-iluminao-bsica/",
+                    "http://elemarjr.files.wordpress.com/2011/07/image18.png"),
+                new XnaPost("Parte%2011",
+                    "Point light",
+                    "http://elemarjr.net/2011/07/26/vamos-aprender-xna-parte-11-hlsl-e-point-light-effect/",
+                    "http://elemarjr.files.wordpress.com/2011/07/image22.png"),
+                new XnaPost("Parte%2012",
+                    "Gerando terrenos",
+                    "http://elemarjr.net/2011/08/04/vamos-aprender-xna-parte-12-criando-terrenos-com-heightmaps/",
+                    "http://elemarjr.files.wordpress.com/2011/08/image3.png"),
+                new XnaPost("Parte%2013",
+                    "Gerando terrenos",
+                    "http://elemarjr.net/2011/08/05/vamos-aprender-xna-parte-13-aplicando-texturas-a-uma-malha-gerada-com-heightmap/",
+                    "http://elemarjr.files.wordpress.com/2011/08/image8.png"),
+                new XnaPost("Parte%2014",
+                    "Billboard",
+                    "http://elemarjr.net/2011/08/06/vamos-aprender-xna-parte-14-billboard-e-freecamera/",
+                    "http://elemarjr.files.wordpress.com/2011/08/image12.png"),
+                new XnaPost("Parte%2015",
+                    "Split screen",
+                    "http://elemarjr.net/2011/08/14/vamos-aprender-xna-parte-15-fps-creating-a-split-screen/",
+                    "http://elemarjr.files.wordpress.com/2011/08/image50.png"),
+                new XnaPost("Parte%2016",
+                    "Projective texturing",
+                    "http://elemarjr.net/2011/08/16/vamos-aprender-xna-parte-16-projective-texturing/",
+                    "http://elemarjr.files.wordpress.com/2011/08/image51.png"),
+                new XnaPost("Parte%2017",
+                    "Post processing",
+                    "http://elemarjr.net/2011/08/23/vamos-aprender-xna-parte-17-post-processing/",
+                    "http://elemarjr.files.wordpress.com/2011/08/image62.png"),
+                new XnaPost("Parte%2018",
+                    "2D+3D",
+                    "http://elemarjr.net/2011/09/24/vamos-aprender-xna-parte-18-mixing-2d-text-sprites-with-3d-models/",
+                    "http://elemarjr.files.wordpress.com/2011/09/image16.png"),
+                new XnaPost("Parte%2019",
+                    "Multitexturing",
+                    "http://elemarjr.net/2011/10/11/vamos-aprender-xna-parte-19-multitexturing/",
+                    "http://elemarjr.files.wordpress.com/2011/10/image5.png"),
+               new XnaPost("Parte%2020",
+                    "Model animation",
+                    "http://elemarjr.net/2011/11/05/vamos-aprender-xna-parte-20-simple-model-animation/",
+                    "http://elemarjr.files.wordpress.com/2011/11/image3.png"),
+
+            ];
+
+            for (var i = 0; i < xnaposts.length; i++) {
+                var div = $("<div class='post type-post status-publish format-standard hentry grid one'/>");
+
+                var divImage = $('<div class="featured-image"/>');
+                divImage.appendTo(div);
+
+
+
+                var aImage = $('<a href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/' +
+                    xnaposts[i].id +
+                    '"><img width="160px" src="' + xnaposts[i].image +
+                    '"/></a>'
+                    );
+
+                aImage.appendTo(divImage);
+
+                $('<h2><a href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/' +
+                    xnaposts[i].id +
+                    '">' + xnaposts[i].title + ' (xna)</a></h2>')
+                    .appendTo(div);
+
+                $('<a class="btn" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/' + xnaposts[i].id + '.html">src</a>')
+                    .appendTo(div);
+
+                $('<a class="btn" style="margin: 2px;" href="' + xnaposts[i].blog + '">post</a>')
+                    .appendTo(div);
+
+                div.appendTo(target);
+            }
         });
+
     </script>
 
     </body>
 </html>
-                        
-                   <!--
-                                        <h2 id="seccxna">
-                        C#+XNA <small>games desenvolvidos de forma fácil</small></h2>
-                    <div class="page-header">
-                        <h3>
-                            VamosAprenderXNA <small>série de exemplos em XNA</small></h3>
-                    </div>
-                    <ul class="thumbnails">
-                        <li class="thumbnail">
-                            <img width="160" title="Animated sprites" alt="animated sprites" src="http://elemarjr.files.wordpress.com/2011/03/image8.png" />
-                            <div class="caption">
-                                <h5>
-                                    Animated sprites</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2002">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/03/02/vamos-aprender-xna-parte-2-animated-sprites/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" title="User input" alt="User input" src="http://elemarjr.files.wordpress.com/2011/03/image16.png" />
-                            <div class="caption">
-                                <h5>
-                                    User input</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2003">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/03/11/vamos-aprender-xna-parte-3-design-e-user-input/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" title="3D madness" alt="3D madness" src="http://elemarjr.files.wordpress.com/2011/03/image31.png" />
-                            <div class="caption">
-                                <h5>
-                                    3D madness</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2004">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/03/19/vamos-aprender-xna-parte-4-xna-3d-madness/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" title="Rotating cube" alt="Rotating cube" src="http://elemarjr.files.wordpress.com/2011/04/image4.png" />
-                            <div class="caption">
-                                <h5>
-                                    Rotating cube</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2005">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/04/10/vamos-aprender-xna-parte-5-rotating-cube-3d/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/04/image15.png" />
-                            <div class="caption">
-                                <h5>
-                                    Loading models</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2006">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/04/29/vamos-aprender-xna-parte-6-loading-3d-models/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/06/image1.png" />
-                            <div class="caption">
-                                <h5>
-                                    Space simulator!</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2007">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/06/20/vamos-aprender-xna-parte-7-space-simulator/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/07/image10.png" />
-                            <div class="caption">
-                                <h5>
-                                    Entendendo HLSL</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2008">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/07/23/vamos-aprender-xna-parte-8-entendendo-hlsl/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/07/image14.png" />
-                            <div class="caption">
-                                <h5>
-                                    Mapeando texturas</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2009">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/07/23/vamos-aprender-xna-parte-9-hlsl-e-mapeamento-de-texturas/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/07/image18.png" />
-                            <div class="caption">
-                                <h5>
-                                    Mapeando texturas</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2010">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/07/24/vamos-aprender-xna-parte-10-hlsl-e-iluminao-bsica/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/07/image22.png" />
-                            <div class="caption">
-                                <h5>
-                                    Point light</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2011">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/07/26/vamos-aprender-xna-parte-11-hlsl-e-point-light-effect/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/08/image3.png" />
-                            <div class="caption">
-                                <h5>
-                                    Gerando terrenos</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2012">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/08/04/vamos-aprender-xna-parte-12-criando-terrenos-com-heightmaps/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/08/image8.png" />
-                            <div class="caption">
-                                <h5>
-                                    Terrenos com texturas</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2013">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/08/05/vamos-aprender-xna-parte-13-aplicando-texturas-a-uma-malha-gerada-com-heightmap/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/08/image12.png" />
-                            <div class="caption">
-                                <h5>
-                                    Billboard</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2014">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/08/06/vamos-aprender-xna-parte-14-billboard-e-freecamera/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/08/image50.png" />
-                            <div class="caption">
-                                <h5>
-                                    Slit screen</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2015">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/08/14/vamos-aprender-xna-parte-15-fps-creating-a-split-screen/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/08/image51.png" />
-                            <div class="caption">
-                                <h5>
-                                    Projective Texturing</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2016">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/08/16/vamos-aprender-xna-parte-16-projective-texturing/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/08/image62.png" />
-                            <div class="caption">
-                                <h5>
-                                    Post processing</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2017">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/08/23/vamos-aprender-xna-parte-17-post-processing/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/09/image16.png" />
-                            <div class="caption">
-                                <h5>
-                                    2D+3D</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2018">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/09/24/vamos-aprender-xna-parte-18-mixing-2d-text-sprites-with-3d-models/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/10/image5.png" />
-                            <div class="caption">
-                                <h5>
-                                    Multitexturing</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2019">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/10/11/vamos-aprender-xna-parte-19-multitexturing/">
-                                        post</a>
-                            </div>
-                        </li>
-                        <li class="thumbnail">
-                            <img width="160" src="http://elemarjr.files.wordpress.com/2011/11/image3.png" />
-                            <div class="caption">
-                                <h5>
-                                    Model animation</h5>
-                                <a class="btn btn-primary" href="https://github.com/ElemarJR/VamosAprenderXNA/tree/master/Parte%2020">
-                                    source</a> <a class="btn" href="http://elemarjr.net/2011/11/05/vamos-aprender-xna-parte-20-simple-model-animation/">
-                                        post</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
--->
