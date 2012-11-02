@@ -1,4 +1,4 @@
-define('logger',
+define('js/app/logger',
 	['jquery', 'toastr'], 
 	function ($, toastr) {
 		var 

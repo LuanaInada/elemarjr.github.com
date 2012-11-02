@@ -4,19 +4,19 @@
 	define('toastr', [], function () { return root.toastr; });
 
 	$('#incrementButton').click(function() {
-		require(['counter'], function(c) {
+		require(['js/app/counter'], function(c) {
 			c.increment();
 		});
 	});
 
 	$('#decrementButton').click(function() {
-		require(['counter'], function(c) {
+		require(['js/app/counter'], function(c) {
 			c.decrement();
 		});
 	});
 
 	$('#resetButton').click(function() {
-		require(['counter'], function(c) {
+		require(['js/app/counter'], function(c) {
 			c.reset();
 		});
 	});
