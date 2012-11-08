@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Deferred Objects</title>
+</head>
+<body>
+    <p id="p1">This paragraph fadeOut in 1000ms</p>
+    <p id="p2">This paragraph fadeOut in 2000ms</p>
+    <button id="fadeOutButton">fade out now!</button>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <script>
+        $("#fadeOutButton").click(function () {
+
+            var 
+                promise1 = $('#p1').fadeOut(1000);
+                promise2 = $('#p2').fadeOut(2000);
+
+            $.when(promise1, promise2)
+                .done(function () {
+                    $('#p1').fadeIn();
+                    $('#p2').fadeIn();
+                });
+
+
+        });
+    </script>
+</body>
+</html>

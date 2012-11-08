@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Deferred Objects</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <script>
+        var 
+            log = function(msg) {
+                $('#output').text($('#output').text() + ' ' + msg); 
+            },
+
+            printDone = function(obj) {
+                log(obj + '  done ..');
+            },
+
+            timer1 = $.Deferred( function (def) {
+                setTimeout(function() { def.resolve("timer 1"); }, 2000);
+            }).promise(),
+
+            timer2 = $.Deferred( function (def) {
+                setTimeout(function() { def.resolve("timer 2"); }, 4000);
+            }).promise();
+
+        timer1.done(function(data) { printDone(data)});
+        timer2.done(function(data) { printDone(data)});
+        $.when(timer1, timer2).done(function() { printDone('timer 1 and 2')})
+    </script>
+</body>
+</html>

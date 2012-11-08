@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Deferred Objects</title>
+</head>
+<body>
+    <button id="resolveButton">resolve</button>
+    <button id="rejectButton">reject</button>
+    <button id="getStateButton">get state</button>
+
+    <div id="output"/>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <script>
+        var def = $.Deferred()
+            .done(function() {$("#output").text("success!");})
+            .fail(function() {$("#output").text("fail!");})
+            .always(function() {alert('def state changed to ' + def.state());})
+            
+        $("#resolveButton").click(function() {
+            def.resolve();
+        });
+
+        $("#rejectButton").click(function() {
+            def.reject();
+        });
+
+        $("#getStateButton").click(function() {
+            alert('def object state = ' + def.state());
+        });
+    </script>
+</body>
+</html>

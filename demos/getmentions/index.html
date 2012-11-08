@@ -1,0 +1,52 @@
+<!DOCTYPE html>  
+<html>
+	<head>
+		<title>Sammy demo</title>
+	</head>
+
+	<body>
+		<ul id='content'></ul>
+		
+		<form action='#/addLine' method='post'>
+			<input type='text' name='msg'/>
+			<button type='submit' name='submit'>send</button>
+		</form> 
+
+		<script 
+			type="text/javascript" 
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>	
+		
+		<script 
+			type="text/javascript"
+			src="js/libs/sammy.js"></script>
+		
+		<script type="text/javascript">
+			$(function() {
+				$.sammy(function () {
+					
+					this.get('#/contact', function(context){
+						var elem = $('<li>Going to contact page</li>');
+						$('#content').append(elem);
+					});
+
+					this.get('#/aboutus', function(context){
+						var elem = $('<li>Going to about us</li>');
+						$('#content').append(elem);
+					});
+
+					this.get('#/label/:name', function (context)
+					{
+						var elem = $('<li> label: ' + this.params['name'] + '</li>');
+						$('#content').append(elem);
+					});
+
+					this.post('#/addLine', function (context){
+						var elem = $('<li>' + this.params['msg'] + '</li>');
+						$('#content').append(elem);
+					});
+				}).run();
+			});
+			
+		</script>
+	</body>
+</html>

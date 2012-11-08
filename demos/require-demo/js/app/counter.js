@@ -1,5 +1,4 @@
-define('app/counter',
-	['./logger'], 
+define(['./logger'], 
 	function (logger) {
 		var 
 			_c = 0,
